@@ -1,1 +1,3 @@
-export interface EntryResponse {}
+export interface EntryResponse {
+    message: string;
+}
