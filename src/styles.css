@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #300835;
+    --bg:  #fec9c1;
+    --piff: #fc8b79;
+    --wakeup: #951528; /* alt. #ff7062*/
+    --harmony: #7a637f;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+}
+
+app-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--bg);
+    font-family: 'Send Flowers', cursive;
+    line-height: 1.5;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+
+
+
