@@ -9,9 +9,10 @@
 
 :root {
     --text: #300835;
-    --bg:  #fec9c1;
+    --bg: #fec9c1;
     --piff: #fc8b79;
-    --wakeup: #951528; /* alt. #ff7062*/
+    --wakeup: #951528;
+    /* alt. #ff7062*/
     --harmony: #7a637f;
 }
 
@@ -48,11 +49,62 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.container {
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #f7f7f7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    padding: 0.2rem;
+    font-family: inherit;
+    text-align: center;
+    border: solid 1px var(--harmony);
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-top: 2rem;
+
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--harmony);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--text);
+}
+
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--wakeup);
+}
+
 p {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
-
-
-
-
