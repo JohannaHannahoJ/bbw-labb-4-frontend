@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
-export class Dashboard {}
+export class Dashboard {
+  message = signal("");
+
+  ngOnInit() {
+    const msg = localStorage.getItem("flashMessage");
+
+    if (msg) {
+      this.message.set(msg);
+      localStorage.removeItem("flashMessage");
+    }
+  }
+}

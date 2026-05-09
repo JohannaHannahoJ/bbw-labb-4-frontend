@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { RegisterResponse } from '../models/register-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ export class Register {
 
   message = signal(""); // För meddelanden i frontend
   authService = inject(AuthService); // används för att kunna anropa backends auth routes
+  router = inject(Router);
 
   // körs när anv. skickar formuläret
   register(): void {
@@ -25,9 +27,8 @@ export class Register {
 
     this.authService.register(user).subscribe({
       next: (response: RegisterResponse) => {
-        this.message.set(response.message)
-        this.username = "";
-        this.password = "";
+        localStorage.setItem("flashMessage", response.message);
+        this.router.navigate(["/login"]);
       },
 
       error: (error) => {
