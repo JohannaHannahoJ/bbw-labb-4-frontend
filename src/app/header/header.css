@@ -30,6 +30,8 @@ nav a {
     color: var(--text);
     font-weight: 600;
     font-size: larger;
+
+    cursor: pointer;
 }
 
 nav a.current {

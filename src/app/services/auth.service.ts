@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import { Observable, tap } from 'rxjs';
 import { RegisterResponse } from '../models/register-response';
 import { LoginResponse } from '../models/login-response';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,8 @@ export class AuthService {
 
   token = signal(localStorage.getItem("token") || "");
   isLoggedIn = computed(() => !!this.token());
+
+  router = inject(Router);
 
   // skapa konto
   register(user: User): Observable<RegisterResponse> {
@@ -30,5 +33,12 @@ export class AuthService {
           localStorage.setItem("token", response.token);
         })
       )
+  }
+
+  // Logga ut
+  logout() : void {
+    this.token.set("");
+    localStorage.removeItem("token");
+    this.router.navigate(["/login"]);
   }
 }
