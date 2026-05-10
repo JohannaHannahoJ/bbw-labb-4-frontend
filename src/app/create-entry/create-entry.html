@@ -1,1 +1,9 @@
-<p>create-entry works!</p>
+<p class="message">{{ message() }}</p>
+
+<form (ngSubmit)="addEntry()">
+
+  <textarea [(ngModel)]="content" name="content" placeholder="Skriv ditt inlägg..." required></textarea>
+
+  <button type="submit">Spara</button>
+
+</form>

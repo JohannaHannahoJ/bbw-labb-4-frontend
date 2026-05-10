@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid var(--harmony);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.message {
+    color: var(--wakeup);
+}
