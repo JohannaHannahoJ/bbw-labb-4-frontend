@@ -12,22 +12,27 @@ export class EntryService {
   private http = inject(HttpClient); // lägg till httpClient så att det går att kommunicera med api
   url: string = "http://localhost:3000/entries";
 
+  // funktion för headers och token för auth
+  private getHeaders() {
+    const token = localStorage.getItem("token"); // hämta token fr ls
+    return {
+      "Authorization": `Bearer ${token}` // skapa headers
+    };
+  }
+
   //Hämtar entries från api och gör om observable till signal
   getEntries(): Signal<Entry[]> {
-    const entries$ = this.http.get<Entry[]>(this.url);
-    return toSignal(entries$, { initialValue: [] }); // Ang reagerar automatiskt när data ändras
+  
+    // GET-request med auth headers
+    const entries$ = this.http.get<Entry[]>(this.url, { headers: this.getHeaders() });
+    // gör om observable till signal
+    return toSignal(entries$, { initialValue: [] });
   }
 
   // skapa nytt inlägg
   addEntry(entry: Entry): Observable<EntryResponse> {
-    const token = localStorage.getItem("token"); // hämta token från local storage
 
-    //skapa header
-    const headers = {
-      "Authorization": `Bearer ${token}`
-    };
-
-    // skicka POST-request till backend
-    return this.http.post<EntryResponse>(this.url, entry, { headers });
+    // skicka POST-request med auth headers
+    return this.http.post<EntryResponse>(this.url, entry, { headers: this.getHeaders() });
   }
 }

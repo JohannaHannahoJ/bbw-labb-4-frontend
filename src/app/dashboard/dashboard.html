@@ -1,3 +1,23 @@
 <h2>Min dagbok</h2>
 
 <p class="welcome">{{ message() }}</p>
+
+@if(entries().length === 0) {
+
+<p class="empty-message">
+    Din dagbok är tom just nu.
+    <a routerLink="/create-entry">Skapa ditt första dagboksinlägg</a>
+</p>
+
+}
+
+<div class="entries">
+
+    @for(entry of entries(); track entry.id) {
+    <article class="entry">
+        <h3>{{ entry.created_at | date:'d MMMM yyyy, HH:mm' }}</h3>
+        <p>{{ entry.content }}</p>
+    </article>
+    }
+
+</div>
