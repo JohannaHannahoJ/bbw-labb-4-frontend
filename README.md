@@ -11,7 +11,7 @@ Syftet är att skapa en webbtjänst som hanterar användarregistrering och inlog
 Jag har valt att bygga en enkel digital dagbok där inloggade användare kan skapa och läsa sina egna inlägg bakom inloggning.
 
 Del 1 av uppgiften, backend, finns här:  
-**länk kommer**
+https://github.com/JohannaHannahoJ/bbw-labb-4-db
 
 ## Webbplatsen innehåller
 
@@ -19,6 +19,7 @@ Del 1 av uppgiften, backend, finns här:
 - Inloggning med JWT-autentisering
 - Skyddad dashboard för inloggade användare som visar användarens inlägg
 - Skapa nya dagboksinlägg
+- Logout-möjlighet
 - Header och Footer som separata Angular-komponenter
 
 ## Tekniker
@@ -28,7 +29,8 @@ Del 1 av uppgiften, backend, finns här:
 - HTML & CSS (global samt på komponent-nivå)
 - Angular Router
 - Angular Forms (ngModel)
-- JWT-autentisierinf
+- JWT-autentisiering
+- Signals
 - Git & GitHub
 
 

@@ -8,6 +8,7 @@
     text-align: center;
     margin-top: 2rem;
     font-size: 1.1rem;
+    border-radius: 5px;
 }
 
 .entries {
@@ -19,7 +20,8 @@
     gap: 1rem;
 }
 
-.entry {
+.entry,
+.empty-message {
     background-color: #f7f7f7;
     padding: 1rem;
 

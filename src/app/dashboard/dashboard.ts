@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { EntryService } from '../services/entry.service';
 import { DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
