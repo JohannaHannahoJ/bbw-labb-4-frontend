@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class EntryService {
   private http = inject(HttpClient); // lägg till httpClient så att det går att kommunicera med api
-  url: string = "http://localhost:3000/entries";
+  url: string = "https://bbw-labb-4-db.onrender.com/entries";
 
   // funktion för headers och token för auth
   private getHeaders() {

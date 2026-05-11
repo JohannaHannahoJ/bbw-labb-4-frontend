@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private http = inject(HttpClient); // används för http-anrop till backend
-  url: string = "http://localhost:3000/users";
+  url: string = "https://bbw-labb-4-db.onrender.com/users";
 
   token = signal(localStorage.getItem("token") || "");
   isLoggedIn = computed(() => !!this.token());
