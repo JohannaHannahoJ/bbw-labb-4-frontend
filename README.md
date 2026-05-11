@@ -2,6 +2,8 @@
 
 **Genomförd av: joha2102**
 
+Länk till applikationen: https://bbw-labb-4.netlify.app/login
+
 ## Projektbeskrivning
 
 Detta projekt är del 2 av Laboration 4 i kursen *Backend-baserad webbutveckling*. Det är en frontend som är byggd för att kommunicera med en backend som hanterar databas, autentisering och API-routes.
